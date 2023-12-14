@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.pageObject;
+package ru.yandex.praktikum.pageobject;
 
 import driver.UseWebDriver;
 import org.junit.Test;
@@ -7,7 +7,7 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertEquals;
-import static ru.yandex.praktikum.pageObject.constants.HomePageConstants.*;
+import static ru.yandex.praktikum.pageobject.constants.HomePageConstants.*;
 
 @RunWith(Parameterized.class)
 public class HomePageTest extends UseWebDriver {

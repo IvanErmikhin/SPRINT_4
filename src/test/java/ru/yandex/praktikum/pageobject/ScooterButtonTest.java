@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.pageObject;
+package ru.yandex.praktikum.pageobject;
 
 import driver.UseWebDriver;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import java.time.Duration;
 import static org.junit.Assert.assertEquals;
 
 public class ScooterButtonTest extends UseWebDriver {
-
+    private static final String expectedResultUrl = "https://qa-scooter.praktikum-services.ru/";
     @Test
     public void clickScooterFromAboutRenterPage() {
         HomePage homePage = new HomePage(driver);
@@ -23,7 +23,7 @@ public class ScooterButtonTest extends UseWebDriver {
 
         new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        assertEquals("https://qa-scooter.praktikum-services.ru/", driver.getCurrentUrl());
+        assertEquals(expectedResultUrl, driver.getCurrentUrl());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class ScooterButtonTest extends UseWebDriver {
 
         new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        assertEquals("https://qa-scooter.praktikum-services.ru/", driver.getCurrentUrl());
+        assertEquals(expectedResultUrl, driver.getCurrentUrl());
     }
 
     @Test
@@ -66,7 +66,7 @@ public class ScooterButtonTest extends UseWebDriver {
 
         new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        assertEquals("https://qa-scooter.praktikum-services.ru/", driver.getCurrentUrl());
+        assertEquals(expectedResultUrl, driver.getCurrentUrl());
     }
 
 }

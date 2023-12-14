@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.pageObject;
+package ru.yandex.praktikum.pageobject;
 
 import driver.UseWebDriver;
 import org.junit.Test;
@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertTrue;
-import static ru.yandex.praktikum.pageObject.constants.CreateOrderButton.DOWN_BUTTON;
-import static ru.yandex.praktikum.pageObject.constants.CreateOrderButton.UP_BUTTON;
-import static ru.yandex.praktikum.pageObject.constants.RentDurationConstants.*;
-import static ru.yandex.praktikum.pageObject.constants.ScooterColours.*;
+import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.DOWN_BUTTON;
+import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.UP_BUTTON;
+import static ru.yandex.praktikum.pageobject.constants.ScooterColours.*;
 
 @RunWith(Parameterized.class)
 public class OrderCreateTest extends UseWebDriver {
@@ -40,17 +39,17 @@ public class OrderCreateTest extends UseWebDriver {
     @Parameterized.Parameters
     public static Object[][] getParameters() {
         return new Object[][]{
-                {UP_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", SIX_DAYS, GREY, "comments one"},
-                {UP_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", FIVE_DAYS, BLACK, "comments two"},
-                {UP_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", ONE_DAY, BLACK, "comments three"},
-                {DOWN_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", SIX_DAYS, GREY, "comments one"},
-                {DOWN_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", FIVE_DAYS, BLACK, "comments two"},
-                {DOWN_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", ONE_DAY, BLACK, "comments three"},
+                {UP_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", GREY, "comments one"},
+                {UP_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", BLACK, "comments two"},
+                {UP_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", BLACK, "comments three"},
+                {DOWN_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", GREY, "comments one"},
+                {DOWN_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", BLACK, "comments two"},
+                {DOWN_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", BLACK, "comments three"},
         };
     }
 
     @Test
-    public void testCreateOrderWithUpButton() {
+    public void checkOrder() {
         new HomePage(driver)
                 .waitForLoadHomePage()
                 .clickCreateOrderButton(button);

@@ -1,4 +1,4 @@
-package ru.yandex.praktikum.pageObject;
+package ru.yandex.praktikum.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static ru.yandex.praktikum.pageObject.constants.CreateOrderButton.DOWN_BUTTON;
-import static ru.yandex.praktikum.pageObject.constants.CreateOrderButton.UP_BUTTON;
+import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.DOWN_BUTTON;
+import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.UP_BUTTON;
 
 public class HomePage {
     WebDriver driver;

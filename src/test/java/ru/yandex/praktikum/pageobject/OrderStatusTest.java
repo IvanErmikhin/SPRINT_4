@@ -1,10 +1,10 @@
-package ru.yandex.praktikum.pageObject;
+package ru.yandex.praktikum.pageobject;
 
 import driver.UseWebDriver;
 import org.junit.Test;
 
 public class OrderStatusTest extends UseWebDriver {
-    private final String numberOrder = "12345";
+    private static final String numberOrder = "12345";
 
 
     @Test
