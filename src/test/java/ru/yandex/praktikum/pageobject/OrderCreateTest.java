@@ -4,6 +4,8 @@ import driver.UseWebDriver;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import ru.yandex.praktikum.pageobject.constants.CreateOrderButton;
+import ru.yandex.praktikum.pageobject.constants.ScooterColours;
 
 import static org.junit.Assert.assertTrue;
 import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.DOWN_BUTTON;
@@ -18,13 +20,13 @@ public class OrderCreateTest extends UseWebDriver {
     private final int stateMetroNumber;
     private final String telephoneNumber;
     private final String date;
-    private final Enum colour;
+    private final ScooterColours colour;
     private final String comment;
     private final String expectedHeader = "Заказ оформлен";
-    private final Enum button;
+    private final CreateOrderButton button;
 
-    public OrderCreateTest(Enum button, String name, String surname, String address, int stateMetroNumber, String telephoneNumber,
-                           String date, Enum colour, String comment) {
+    public OrderCreateTest(CreateOrderButton button, String name, String surname, String address, int stateMetroNumber, String telephoneNumber,
+                           String date, ScooterColours colour, String comment) {
         this.button = button;
         this.name = name;
         this.surname = surname;

@@ -6,19 +6,17 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class UseWebDriver {
     protected WebDriver driver;
-    private static final String urlHomaPage = "https://qa-scooter.praktikum-services.ru/";
+    private static final String URL_HOME_PAGE = "https://qa-scooter.praktikum-services.ru/";
     @Before
     public void startUp() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-        driver.get(urlHomaPage);
+        driver.get(URL_HOME_PAGE);
     }
 
 //    @Before
