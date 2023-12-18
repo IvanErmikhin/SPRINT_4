@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import ru.yandex.praktikum.pageobject.constants.ScooterColours;
 import java.time.Duration;
 
 import static ru.yandex.praktikum.pageobject.constants.ScooterColours.*;
@@ -43,7 +43,7 @@ public class AboutScooter {
         return this;
     }
 
-    public AboutScooter changeColour(Enum colour) {
+    public AboutScooter changeColour(ScooterColours colour) {
         if (colour.equals(BLACK)) {
             driver.findElement(colourBlack).click();
         } else if (colour.equals(GREY)) {
@@ -63,6 +63,13 @@ public class AboutScooter {
 
     public void clickScooter() {
         driver.findElement(scooterButton).click();
+    }
+
+    public String getHeaderAboutScooter() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(driver -> (driver.findElement(rentHeader).getText() != null
+                && !driver.findElement(rentHeader).getText().isEmpty()
+        ));
+        return driver.findElement(rentHeader).getText();
     }
 }
 

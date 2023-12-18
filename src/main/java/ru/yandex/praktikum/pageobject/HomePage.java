@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.praktikum.pageobject.constants.CreateOrderButton;
 
 import java.time.Duration;
 
@@ -59,7 +60,7 @@ public class HomePage {
         driver.findElement(downOrderButton).click();
     }
 
-    public void clickCreateOrderButton(Enum button) {
+    public void clickCreateOrderButton(CreateOrderButton button) {
         if (button.equals(UP_BUTTON)) {
             clickUpOrderButton();
         } else if (button.equals(DOWN_BUTTON)) {

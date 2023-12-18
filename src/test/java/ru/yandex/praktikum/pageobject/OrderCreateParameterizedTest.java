@@ -8,12 +8,11 @@ import ru.yandex.praktikum.pageobject.constants.CreateOrderButton;
 import ru.yandex.praktikum.pageobject.constants.ScooterColours;
 
 import static org.junit.Assert.assertTrue;
-import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.DOWN_BUTTON;
 import static ru.yandex.praktikum.pageobject.constants.CreateOrderButton.UP_BUTTON;
 import static ru.yandex.praktikum.pageobject.constants.ScooterColours.*;
 
 @RunWith(Parameterized.class)
-public class OrderCreateTest extends UseWebDriver {
+public class OrderCreateParameterizedTest extends UseWebDriver {
     private final String name;
     private final String surname;
     private final String address;
@@ -25,9 +24,9 @@ public class OrderCreateTest extends UseWebDriver {
     private final String expectedHeader = "Заказ оформлен";
     private final CreateOrderButton button;
 
-    public OrderCreateTest(CreateOrderButton button, String name, String surname, String address, int stateMetroNumber, String telephoneNumber,
-                           String date, ScooterColours colour, String comment) {
-        this.button = button;
+    public OrderCreateParameterizedTest(String name, String surname, String address, int stateMetroNumber, String telephoneNumber,
+                                        String date, ScooterColours colour, String comment) {
+        this.button = UP_BUTTON;
         this.name = name;
         this.surname = surname;
         this.address = address;
@@ -41,12 +40,9 @@ public class OrderCreateTest extends UseWebDriver {
     @Parameterized.Parameters
     public static Object[][] getParameters() {
         return new Object[][]{
-                {UP_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", GREY, "comments one"},
-                {UP_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", BLACK, "comments two"},
-                {UP_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", BLACK, "comments three"},
-                {DOWN_BUTTON, "Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", GREY, "comments one"},
-                {DOWN_BUTTON, "Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", BLACK, "comments two"},
-                {DOWN_BUTTON, "Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", BLACK, "comments three"},
+                {"Имя Один", "Фамилия", "Адрес 1", 123, "79991111111", "28.05.2023", GREY, "comments one"},
+                {"Имя Два", "Фамилия", "Адрес 2", 7, "79992222222", "28.05.2023", BLACK, "comments two"},
+                {"Имя Три", "Фамилия", "Адрес 3", 10, "79993333333", "28.05.2023", BLACK, "comments three"}
         };
     }
 
